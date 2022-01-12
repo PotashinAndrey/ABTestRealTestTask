@@ -20,7 +20,7 @@ const TableRow = ({ id, reg, lastIn, submit }) => {
             return;
         };
 
-        submit(regValue, lastInValue);
+        submit(moment(regValue).toDate(), moment(lastInValue).toDate());
     }
 
     return (
