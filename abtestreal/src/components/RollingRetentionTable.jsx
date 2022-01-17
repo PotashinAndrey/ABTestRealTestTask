@@ -5,7 +5,7 @@ import TableHeader from "./TableHeader.jsx";
 import TableRow from "./TableRow.jsx";
 import AddNewRow from "./AddNewRow.jsx";
 
-const RollingRetentionTable = ({ data, newData, handleAddNewRow, handleAddNewRowRand, submit }) => {
+const RollingRetentionTable = ({ data, newData, handleAddNewRow, handleAddNewRowRand, submit, save }) => {
     const rows = data.map(e =>
         <TableRow
             key={e.id}
@@ -34,7 +34,7 @@ const RollingRetentionTable = ({ data, newData, handleAddNewRow, handleAddNewRow
                 <AddNewRow onClick={handleAddNewRow} />
             </div>
             <div className="buttons">
-                <button>Save</button>
+                <button onClick={save}>Save</button>
                 <button>Calcultae</button>
                 <button onClick={handleAddNewRowRand}>add random</button>
             </div>

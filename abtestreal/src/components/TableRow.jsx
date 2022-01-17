@@ -27,11 +27,11 @@ const TableRow = ({ id, reg, lastIn, submit }) => {
         <div className="tableRow">
             <div className="cell">{!lastIn && !reg ? <button onClick={handleOk}>ok</button> : id}</div>
             {reg ?
-                <div className="second cell">{moment(reg).format("DD.MM.yyyy")}</div> :
+                <div className="second cell">{moment(new Date(reg)).format("DD.MM.yyyy")}</div> :
                 <input onChange={e => setRegValue(e.target.value)} type="date" placeholder="Choose date" />
             }
             {lastIn ?
-                <div className="cell">{moment(lastIn).format("DD.MM.yyyy")}</div> :
+                <div className="cell">{moment(new Date(lastIn)).format("DD.MM.yyyy")}</div> :
                 <input onChange={e => setLastInValue(e.target.value)} type="date" placeholder="Choose date" />
             }
         </div>
